@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Col } from 'react-bootstrap';
 
 class MyHeader extends Component {
   render() {
     return (
       <div>
-        <p>hello react</p>
+        <p className="container">hello react</p>
       </div>
     );
   }
