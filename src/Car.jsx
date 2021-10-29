@@ -1,14 +1,35 @@
 import React, { Component } from "react";
+import "./css/app.css";
+import { Button } from "react-bootstrap";
 
 class Car extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "benz",
+      speed: "280km",
+    };
+  }
+
+  changeHandler = () => {
+    this.setState({
+      name: "BMW",
+      speed:"400km"
+    });
+  };
+
   render() {
     return (
       <div>
-        <p className="container">
-          the model of car is {this.props.model} , the color of my car is{" "}
-          {this.props.color}
-          <span> {this.props.children}</span>
-        </p>
+        <div className="container mt-5">
+          <p>
+            the model of car is {this.state.name} , the highest speed of my car
+            is {this.state.speed}
+          </p>
+        </div>
+        <div className="container">
+          <Button onClick={this.changeHandler}>Change</Button>
+        </div>
       </div>
     );
   }
