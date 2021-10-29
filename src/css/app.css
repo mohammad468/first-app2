@@ -11956,4 +11956,8 @@ fieldset:disabled .btn {
     display: none !important;
   }
 }
+
+body {
+  background-color: #fff !important;
+}
 /*# sourceMappingURL=app.css.map */
