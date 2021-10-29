@@ -6,15 +6,13 @@ class Car extends Component {
   constructor() {
     super();
     this.state = {
-      name: "benz",
-      speed: "280km",
+      number: 0,
     };
   }
 
-  changeHandler = () => {
+  upOne = () => {
     this.setState({
-      name: "BMW",
-      speed:"400km"
+      number: this.state.number + 1,
     });
   };
 
@@ -22,13 +20,10 @@ class Car extends Component {
     return (
       <div>
         <div className="container mt-5">
-          <p>
-            the model of car is {this.state.name} , the highest speed of my car
-            is {this.state.speed}
-          </p>
+          <h1>{this.state.number}</h1>
         </div>
         <div className="container">
-          <Button onClick={this.changeHandler}>Change</Button>
+          <Button onClick={this.upOne}>Change</Button>
         </div>
       </div>
     );
