@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import "./css/app.css";
-import { Button } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      isLoggedIn: true,
+      Cars: ["Benz", "BMW", "Santafe", "Samand"],
     };
   }
   render() {
-    let text;
-    if (this.state.isLoggedIn) {
-      text = <h1>welcome</h1>;
-    } else {
-      text = <Button>Login</Button>;
-    }
-    return <div>{text}</div>;
+    return (
+      <div>
+        <h1>My Cars:</h1>
+        {this.state.Cars.map((car) => (
+          <Badge bg="info" className="mx-1">
+            {car}
+          </Badge>
+        ))}
+      </div>
+    );
   }
 }
 
