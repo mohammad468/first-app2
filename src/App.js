@@ -1,22 +1,27 @@
 import React, { Component } from "react";
 import "./css/app.css";
-import ClassComponents from "./components/ClassComponents";
+import { Button } from "react-bootstrap";
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      text: "HI MOHAMMAD",
+      isLoggedIn: true,
     };
   }
-  sayHi = () => {
-    console.log(this.state.text);
-  };
   render() {
-    return (
-      <div>
-        <ClassComponents sayHi={this.sayHi} />
-      </div>
-    );
+    if (this.state.isLoggedIn) {
+      return (
+        <div>
+          <h1>hello Mohammad</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Button>Login</Button>
+        </div>
+      );
+    }
   }
 }
 
