@@ -9,19 +9,13 @@ class App extends Component {
     };
   }
   render() {
+    let text;
     if (this.state.isLoggedIn) {
-      return (
-        <div>
-          <h1>hello Mohammad</h1>
-        </div>
-      );
+      text = <h1>welcome</h1>;
     } else {
-      return (
-        <div>
-          <Button>Login</Button>
-        </div>
-      );
+      text = <Button>Login</Button>;
     }
+    return <div>{text}</div>;
   }
 }
 
