@@ -1,29 +1,32 @@
 import React, { Component } from "react";
 import { Badge } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { v4 } from "uuid";
 
 class MyCars extends Component {
   constructor() {
     super();
     this.state = {
-      Cars: [
-        { id: "1", name: "Benz" },
-        { id: "2", name: "BMW" },
-        { id: "3", name: "Hyundai Santa Fe" },
-        { id: "4", name: "Samand" },
-      ],
+      number: 0,
     };
   }
+  upOne = () => {
+    this.setState((prevState) => ({
+      number: prevState.number + 1,
+    }));
+  };
   render() {
     return (
-      <div>
-        <h1>My Cars:</h1>
-        {this.state.Cars.map((car) => (
+      <Container>
+        <h1 className="mt-2">
+          Number of product is
           <Badge key={v4()} bg="info" className="mx-1">
-            {car.name}
+            {this.state.number}
           </Badge>
-        ))}
-      </div>
+        </h1>
+        <Button onClick={this.upOne}>Up one</Button>
+      </Container>
     );
   }
 }
