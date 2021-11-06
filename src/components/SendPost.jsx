@@ -36,7 +36,7 @@ class SendPost extends Component {
             type="text"
             value={this.state.title}
             onChange={this.changeHandler}
-            placeholder="Enter Text"
+            placeholder="Enter Title"
             className="my-2"
             name="title"
           />
@@ -44,7 +44,7 @@ class SendPost extends Component {
             type="text"
             value={this.state.body}
             onChange={this.changeHandler}
-            placeholder="Enter Text"
+            placeholder="Enter Body"
             className="my-2"
             name="body"
           />

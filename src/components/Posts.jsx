@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Badge, Container } from "react-bootstrap";
+import { Badge, Container, Button } from "react-bootstrap";
 // import axios from "axios";
 
 class Posts extends Component {
@@ -14,6 +14,15 @@ class Posts extends Component {
             <span className="my-2 text-primary">
               <Badge bg="info">{this.props.title}</Badge>
             </span>
+            <br />
+            <Button
+              sm
+              variant="warning"
+              className="my-2"
+              onClick={this.props.deletePost}
+            >
+              Delete
+            </Button>
           </div>
         </Container>
       </div>

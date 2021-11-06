@@ -12,6 +12,13 @@ class App extends Component {
     };
   }
 
+  deletePost = (id) => {
+    // console.log("deletePost");
+    axios
+      .delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then((response) => console.log("delete", response));
+  };
+
   componentDidMount() {
     axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
       this.setState({
@@ -22,9 +29,14 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SendPost/>
+        <SendPost />
         {this.state.postData.map((post) => (
-          <Posts key={post.id} id={post.id} title={post.title} />
+          <Posts
+            key={post.id}
+            deletePost={() => this.deletePost(post.id)}
+            id={post.id}
+            title={post.title}
+          />
         ))}
       </div>
     );
